@@ -1,15 +1,35 @@
-import React from 'react'
-import "./List.scss"
-import TaskTile from "../../Components/TaskTile/TaskTile"
+import React from "react";
+import "./List.scss";
+import TaskTile from "../../Components/TaskTile/TaskTile";
+import { useState } from "react";
+import TaskContainer from "../TaskContainer/TaskContainer";
 
-const List = () => {
+const List = ({ handleSearch, toDoTerm, handleSubmit }) => {
+  const [showChecked, setShowChecked] = useState("");
 
-  
-  return (
-    <div className='list'>
-      <TaskTile/>
-    </div>
+  // const toggleCheck=()=>{
+  //   setShowChecked(`<del>${task}</del>`);
+  // }
+
+const handleSubmit = ()=> {
+  return(
+    console.log("get me to the list")
   )
+
 }
 
-export default List
+  return (
+    <div className="list">
+      <div className="tasks">
+        <TaskContainer
+          handleSubmit={handleSubmit}
+          toDoTerm={toDoTerm}
+          handleSearch={handleSearch}
+        />
+      </div>
+      <TaskTile />
+    </div>
+  );
+
+
+export default List;

@@ -1,16 +1,14 @@
 import React from "react";
 import "./Body.scss";
 import List from "../List/List";
-import Tasks from "../Tasks/Tasks";
 import Nav from "../Nav/Nav";
 
-const Body = (handleSearch, toDoTerm) => {
+const Body = ({handleSearch, toDoTerm, handleSubmit}) => {
   return (
     <div className="body">
      
       <Nav />
-      <Tasks handleSearch={handleSearch} toDoTerm={toDoTerm}/>
-      <List />
+      <List  handleSearch={handleSearch} toDoTerm={toDoTerm} handleSubmit={handleSubmit} />
     </div>
   );
 };
